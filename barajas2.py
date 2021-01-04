@@ -32,7 +32,14 @@ def main(tamano_mano, intentos):
             valores.append(carta[1])
 
         counter = dict(collections.Counter(valores))
-        print(counter)
+        for val in counter.values():
+            if val==2:
+                pares +=1 
+                break
+
+    probabilidad_par = pares / intentos
+    print(f' la probabilidad de obtener un par en un mano de {tamano_mano} cartas es de {probabilidad_par}')
+        
 
 if __name__ == "__main__":
     tamano_mano = int(input("de cuantas cartas sera la mano? "))
